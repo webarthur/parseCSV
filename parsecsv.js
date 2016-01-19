@@ -1,4 +1,14 @@
 
+// Ajax converter datatype
+if(typeof(jQuery)!='undefined')
+  jQuery.ajaxSetup({
+    converters: {
+      "text csv": function(response) {
+        return response.parseCSV();
+      }
+    }
+  });
+
 if(!String.prototype.parseCSV)
   String.prototype.parseCSV = parseCSV;
 
